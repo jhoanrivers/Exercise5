@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     id("kotlin-android")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -74,7 +75,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0")
 
+    // Coil
+    implementation("io.coil-kt:coil-compose:1.3.2")
 
+    
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.45")
     kapt("com.google.dagger:hilt-android-compiler:2.45")
@@ -106,6 +110,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
 
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
 
 
 
