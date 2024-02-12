@@ -20,6 +20,14 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Install Ruby and Fastlane
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+
+      - name: Install Fastlane
+        run: gem install fastlane -v '2.220.0'
+
       - name: Install dependencies
         run: npm install -g firebase-tools fastlane
 
