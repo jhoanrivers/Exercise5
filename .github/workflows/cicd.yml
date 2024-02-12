@@ -25,6 +25,12 @@ jobs:
         with:
           ruby-version: '2.7'
 
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
       - name: Install Fastlane
         run: gem install fastlane -v '2.219.0'
 
