@@ -16,10 +16,10 @@
 default_platform(:android)
 
 platform :android do
-    before_all do
-        ENV["FIREBASE_LOGIN_CREDENTIALS"] = "fastlane/firebase_login_credentials.json"
-        ENV["FIREBASE_APP_ID"] = "1:48962475492:android:7994dd436973baee6963f1"
-    end
+#     before_all do
+#         ENV["FIREBASE_LOGIN_CREDENTIALS"] = "fastlane/firebase_login_credentials.json"
+#         ENV["FIREBASE_APP_ID"] = "1:48962475492:android:7994dd436973baee6963f1"
+#     end
 
     ## firebase distribution
     desc "Delivery App to Firebase Distribution"
@@ -40,7 +40,7 @@ platform :android do
             apk_path: gradle_apk_output_path,
             release_notes: "#{release_note}",
             groups_file: "fastlane/groups.txt",
-            firebase_cli_token: "1//0gYrvvyVKPwYyCgYIARAAGBASNwF-L9IrYXMifLTVP4lXUhFpxAIgeon_PicukxdhRPa-E_vqtJg855VHWqLOyBEuwnJ8Zki3i44"
+            firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"]
         )
         # firebase testGoogle r: "First Alpha Release"
 
